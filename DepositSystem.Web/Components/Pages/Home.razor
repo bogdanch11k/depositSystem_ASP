@@ -1,0 +1,72 @@
+﻿@page "/"
+@using DepositSystem.Core
+
+<PageTitle>Банківська система</PageTitle>
+
+<h1>Банківська система</h1>
+
+<div class="card mt-4 p-3">
+    <h3>Валідація карти</h3>
+    <div class="form-group mb-3">
+        <label>Номер карти:</label>
+        <input type="text" class="form-control" @bind="CardNumber" placeholder="Введіть номер карти" />
+    </div>
+    <button class="btn btn-primary" @onclick="ValidateCard">Перевірити</button>
+    
+    @if (!string.IsNullOrEmpty(CardValidationMessage))
+    {
+        <div class="mt-2 alert @(IsCardValid ? "alert-success" : "alert-danger")">
+            @CardValidationMessage
+        </div>
+    }
+</div>
+
+<div class="card mt-4 p-3">
+    <h3>Обрахунок депозиту (10% річних)</h3>
+    <div class="form-group mb-3">
+        <label>Сума депозиту (грн):</label>
+        <input type="number" class="form-control" @bind="DepositAmount" min="1" />
+    </div>
+    <div class="form-group mb-3">
+        <label>Кількість місяців:</label>
+        <input type="number" class="form-control" @bind="DepositMonths" min="1" />
+    </div>
+    <button class="btn btn-success" @onclick="CalculateDeposit">Розрахувати</button>
+    
+    @if (!string.IsNullOrEmpty(DepositResultMessage))
+    {
+        <div class="mt-2 alert alert-info">
+            @DepositResultMessage
+        </div>
+    }
+</div>
+
+@code {
+    private string CardNumber { get; set; } = "";
+    private string CardValidationMessage { get; set; } = "";
+    private bool IsCardValid { get; set; }
+
+    private void ValidateCard()
+    {
+        IsCardValid = CardValidator.IsValid(CardNumber);
+        CardValidationMessage = IsCardValid ? "Карта дійсна." : "Помилка: Недійсний номер карти.";
+    }
+
+    private decimal DepositAmount { get; set; } = 1000;
+    private int DepositMonths { get; set; } = 12;
+    private string DepositResultMessage { get; set; } = "";
+
+    private void CalculateDeposit()
+    {
+        try
+        {
+            decimal earnings = DepositCalculator.CalculateEarnings(DepositAmount, DepositMonths);
+            decimal total = DepositAmount + earnings;
+            DepositResultMessage = $"Ви заробите: {earnings} грн за {DepositMonths} міс. Загальна сума до виплати: {total} грн.";
+        }
+        catch (Exception ex)
+        {
+            DepositResultMessage = $"Помилка: {ex.Message}";
+        }
+    }
+}

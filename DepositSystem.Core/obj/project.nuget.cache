@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "O46rNIDceMk=",
+  "success": true,
+  "projectFilePath": "D:\\Study-sync\\IT\\ASP\\Class\\DepositSystem\\DepositSystem.Core\\DepositSystem.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.3\\microsoft.aspnetcore.app.internal.assets.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

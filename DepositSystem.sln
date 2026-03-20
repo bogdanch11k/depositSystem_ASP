@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepositSystem.Web", "DepositSystem.Web\DepositSystem.Web.csproj", "{63CD16E8-213E-44E5-8995-1E7F51C6CC9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepositSystem.Core", "DepositSystem.Core\DepositSystem.Core.csproj", "{441BBF40-6669-41D6-BF62-AF3E22A8732C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepositSystem.Tests", "DepositSystem.Tests\DepositSystem.Tests.csproj", "{E537EDBA-89A5-45EE-8FB5-A8CEF6999820}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63CD16E8-213E-44E5-8995-1E7F51C6CC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63CD16E8-213E-44E5-8995-1E7F51C6CC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63CD16E8-213E-44E5-8995-1E7F51C6CC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63CD16E8-213E-44E5-8995-1E7F51C6CC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{441BBF40-6669-41D6-BF62-AF3E22A8732C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441BBF40-6669-41D6-BF62-AF3E22A8732C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441BBF40-6669-41D6-BF62-AF3E22A8732C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441BBF40-6669-41D6-BF62-AF3E22A8732C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E537EDBA-89A5-45EE-8FB5-A8CEF6999820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E537EDBA-89A5-45EE-8FB5-A8CEF6999820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E537EDBA-89A5-45EE-8FB5-A8CEF6999820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E537EDBA-89A5-45EE-8FB5-A8CEF6999820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
